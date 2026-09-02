@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tausif Sayyed | AI Full Stack Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fixed Fullscreen Canvas Scrub Animation -->
+  <div class="canvas-viewport" aria-hidden="true">
+    <canvas id="hero-canvas"></canvas>
+    <div class="ambient-glow"></div>
+    <div class="vignette-overlay"></div>
+    <div class="giant-watermark" id="giant-watermark" aria-hidden="true">TAUSIF SAYYED</div>
+  </div>
+
+  <!-- Initial Preloader Buffer Overlay -->
+  <div class="loader-overlay" id="loader">
+    <div class="loader-content">
+      <div class="loader-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-core"></div>
+      </div>
+      <div class="loader-meta">
+        <span class="loader-title">TAUSIF SAYYED · AI FULL STACK DEVELOPER</span>
+        <span class="loader-pct" id="loader-pct">0%</span>
+      </div>
+      <div class="loader-bar-bg">
+        <div class="loader-bar-fill" id="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persistent Fixed Top Header -->
+  <header class="site-header">
+    <a href="#home" class="brand-logo" id="brand-logo">
+      <svg class="brand-symbol" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 8H24M14 8V24M20 14L14 20L8 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="21" cy="7" r="2.5" fill="#ff2a4b" />
+      </svg>
+      <span class="brand-name">Tausif Sayyed</span>
+    </a>
+
+    <nav class="center-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="#home" class="nav-link active" data-section="home">
+            Home
+            <span class="active-dot"></span>
+          </a>
+        </li>
+        <li class="nav-item"><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link" data-section="projects">Websites & Projects</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link" data-section="skills">Full Stack Skills</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <div class="timezone-pill" id="timezone-pill">
+        <span class="timezone-label">Timezone · IST</span>
+        <span class="timezone-value" id="live-clock">6:30pm · 23 June, 2024</span>
+      </div>
+
+      <button class="menu-toggle-btn" id="menu-btn" aria-label="Open Navigation Menu">
+        <span class="menu-icon-bars">
+          <span></span>
+          <span></span>
+        </span>
+        <span class="menu-text">MENU</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Minimalist Background Scrub HUD (Fixed) -->
+  <div class="frame-hud" id="frame-hud">
+    <span class="frame-hud-label" id="frame-counter">FRAME 001 / 240</span>
+    <div class="frame-hud-track">
+      <div class="frame-hud-fill" id="frame-hud-fill"></div>
+    </div>
+  </div>
+
+  <!-- Persistent Floating Bottom Dock / Status Bar -->
+  <footer class="bottom-dock-container">
+    <div class="bottom-dock-pill">
+      <div class="dock-item dock-item-left">
+        <span class="dock-dot"></span>
+        <span class="dock-text" id="dock-status-text">AI Full Stack Developer</span>
+      </div>
+
+      <div class="dock-item dock-item-center">
+        <span class="dock-dot"></span>
+        <span class="dock-text">Bhusawal, IN · Open to Remote</span>
+      </div>
+
+      <div class="dock-item dock-item-right" id="dock-scroll-btn">
+        <span class="dock-dot pulse"></span>
+        <span class="dock-text">Scroll To Explore</span>
+        <svg class="dock-arrow-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M6 2.5V9.5M6 9.5L2.5 6M6 9.5L9.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SCROLLYTELLING MAIN STAGES (Synced 1-to-1 with the 240 Frames)
+       ========================================================================= -->
+  <main class="scrolly-container" id="scrolly-container">
+
+    <!-- -----------------------------------------------------------------------
+         PAGE 1: HERO OVERVIEW (Frames 1 – 45)
+         ----------------------------------------------------------------------- -->
+    <section class="story-section hero-section" id="home" data-frame-start="1" data-frame-end="45">
+      <div class="section-inner hero-stage">
+        
+        <!-- Left Hero Column -->
+        <div class="hero-left-col">
+          <div class="kicker-badge">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">AI Full Stack Developer</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Building scalable<br />
+            end-to-end modern<br />
+            AI full stack sys<span class="headline-asterisk">*</span>
+          </h1>
+
+          <div class="rating-badge">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="customer-count">B.Tech CSE · 8.71 CGPA</span>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">
+              <span>Get In Touch</span>
+              <span class="btn-circle-arrow">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#projects" class="btn btn-frosted">
+              <span>Explore Websites</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Column -->
+        <div class="hero-right-col">
+          <div class="explore-widget-card" id="explore-card">
+            <div class="widget-top-row">
+              <span class="widget-index" id="widget-index">01</span>
+              <button class="widget-star-btn" aria-label="Star Project">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 0L9.8 6.2L16 8L9.8 9.8L8 16L6.2 9.8L0 8L6.2 6.2L8 0Z"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="widget-main-row">
+              <div class="widget-monogram-box">
+                <span class="monogram-initials">TS</span>
+              </div>
+
+              <div class="widget-details">
+                <h3 class="widget-title" id="widget-title">AI Full Stack Apps.</h3>
+                <div class="widget-slider-track">
+                  <div class="widget-slider-bar" id="widget-slider-bar"></div>
+                </div>
+
+                <div class="widget-controls">
+                  <button class="widget-arrow-btn prev-btn" id="widget-prev" aria-label="Previous Slide">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M7.5 2.5L4 6L7.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button class="widget-arrow-btn next-btn" id="widget-next" aria-label="Next Slide">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M4.5 2.5L8 6L4.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Stack Core Tech Stack Grid -->
+          <div class="partners-block">
+            <div class="partners-header">
+              <span class="partners-label">Full Stack & AI Stack</span>
+            </div>
+            <div class="partners-grid">
+              <div class="partner-logo"><span class="partner-icon">⚛️</span><span class="partner-text">React / Next.js</span></div>
+              <div class="partner-logo"><span class="partner-icon">🟢</span><span class="partner-text">Node.js</span></div>
+              <div class="partner-logo"><span class="partner-icon">🐍</span><span class="partner-text">Python / FastAPI</span></div>
+              <div class="partner-logo"><span class="partner-icon">⚡</span><span class="partner-text">LangChain</span></div>
+              <div class="partner-logo"><span class="partner-icon">🐘</span><span class="partner-text">PostgreSQL</span></div>
+              <div class="partner-logo"><span class="partner-icon">🍃</span><span class="partner-text">MongoDB</span></div>
+              <div class="partner-logo"><span class="partner-icon">📘</span><span class="partner-text">TypeScript</span></div>
+              <div class="partner-logo"><span class="partner-icon">🐳</span><span class="partner-text">Docker</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         PAGE 2: ABOUT & PROFILE SUMMARY (Frames 46 – 95)
+         ----------------------------------------------------------------------- -->
+    <section class="story-section content-section" id="about" data-frame-start="46" data-frame-end="95">
+      <div class="section-inner content-card-wrapper">
+        
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">Profile & Mindset</span>
+          </div>
+          <h2 class="section-title">Engineering High-Impact Web & Intelligent AI Architectures</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Summary Card -->
+          <div class="glass-card about-main-card">
+            <p class="about-lead">
+              Computer Science Engineering graduate (<strong>B.Tech, CGPA 8.71</strong>) specializing as an <strong>AI Full Stack Developer</strong> — bridging responsive frontend interfaces, robust backend APIs, and modern Generative AI / LLM capabilities into production-ready web applications.
+            </p>
+            <p class="about-body">
+              Combines deep full-stack development skills (<strong>React, Next.js, TypeScript, Node.js, Python, FastAPI, PostgreSQL, MongoDB</strong>) with real-world engineering discipline in monitoring, system architecture, and root cause analysis (RCA). Experienced in building client websites, intelligent RAG pipelines, and high-performance cloud applications.
+            </p>
+
+            <div class="about-tags">
+              <span class="about-tag">Full Stack Web Architecture</span>
+              <span class="about-tag">AI / LLM Integration</span>
+              <span class="about-tag">RESTful & GraphQL APIs</span>
+              <span class="about-tag">Responsive UI/UX</span>
+              <span class="about-tag">Scalable Cloud Deployments</span>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Sidebar -->
+          <div class="about-metrics-col">
+            <div class="glass-card metric-card">
+              <span class="metric-number">8.71</span>
+              <span class="metric-label">B.Tech CSE CGPA</span>
+              <p class="metric-sub">Shri Sant Gadge Baba College of Engg / BATU</p>
+            </div>
+
+            <div class="glass-card metric-card">
+              <span class="metric-number">Full Stack</span>
+              <span class="metric-label">Frontend, Backend & AI</span>
+              <p class="metric-sub">React, Next.js, Node.js, Python, LangChain</p>
+            </div>
+
+            <div class="glass-card metric-card highlight">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Remote Ready</span>
+              <p class="metric-sub">Bhusawal, Maharashtra · Global availability</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         PAGE 3: FEATURED WEBSITES & FULL STACK PROJECTS (Frames 96 – 150)
+         ----------------------------------------------------------------------- -->
+    <section class="story-section content-section" id="projects" data-frame-start="96" data-frame-end="150">
+      <div class="section-inner content-card-wrapper">
+        
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">Featured Websites & Applications</span>
+          </div>
+          <h2 class="section-title">Production Websites & AI Full Stack Systems</h2>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: AI-Powered RAG Full-Stack Platform -->
+          <div class="glass-card project-card featured">
+            <div class="project-card-header">
+              <span class="project-badge genai">AI Full Stack Web App</span>
+              <span class="project-year">Featured</span>
+            </div>
+            <h3 class="project-title">AI-Powered RAG Knowledge Web Platform</h3>
+            <p class="project-desc">
+              End-to-end full-stack AI web application with an interactive responsive frontend, document ingestion pipeline, and real-time streaming LLM response interface. Uses LangChain and FAISS vector embeddings to deliver precision search across domain documents.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-chip">React / Next.js</span>
+              <span class="tech-chip">FastAPI / Python</span>
+              <span class="tech-chip">LangChain</span>
+              <span class="tech-chip">FAISS Vector DB</span>
+              <span class="tech-chip">Tailwind CSS</span>
+              <span class="tech-chip">WebSockets</span>
+            </div>
+          </div>
+
+          <!-- Project 2: Government Garden Project Official Website -->
+          <div class="glass-card project-card">
+            <div class="project-card-header">
+              <span class="project-badge web">Client Website</span>
+              <span class="project-year">Production Live</span>
+            </div>
+            <h3 class="project-title">Government Garden Official Web Portal</h3>
+            <p class="project-desc">
+              Designed, developed, and deployed full-stack client website for the Government Garden Project during internship at The Innovative Solutions. Features interactive botanical catalogs, dynamic inquiry forms, cross-device responsiveness, and high-performance SEO.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-chip">HTML5 / CSS3</span>
+              <span class="tech-chip">JavaScript (ES6+)</span>
+              <span class="tech-chip">Responsive UX</span>
+              <span class="tech-chip">REST APIs</span>
+              <span class="tech-chip">Live Deployment</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Modern Full-Stack SaaS / E-Commerce Web Platform -->
+          <div class="glass-card project-card">
+            <div class="project-card-header">
+              <span class="project-badge saas">Full Stack SaaS</span>
+              <span class="project-year">Full Stack</span>
+            </div>
+            <h3 class="project-title">Modern Full-Stack SaaS Web Platform</h3>
+            <p class="project-desc">
+              Production-grade web application featuring JWT-based user authentication, role-based access control, dynamic dashboard analytics, shopping cart & payment flow, and scalable database schemas for real-world business operations.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-chip">React.js</span>
+              <span class="tech-chip">Node.js / Express</span>
+              <span class="tech-chip">PostgreSQL / MongoDB</span>
+              <span class="tech-chip">Stripe API</span>
+              <span class="tech-chip">Docker</span>
+            </div>
+          </div>
+
+          <!-- Project 4: Live Telemetry & Predictive Analytics Web Dashboard -->
+          <div class="glass-card project-card">
+            <div class="project-card-header">
+              <span class="project-badge ml">Data & Web Dashboard</span>
+              <span class="project-year">Analytics</span>
+            </div>
+            <h3 class="project-title">Predictive Analytics & Monitoring Dashboard</h3>
+            <p class="project-desc">
+              Interactive telemetry dashboard monitoring real-time system metrics, visual anomaly detection, and predictive ML scoring models. Built with live websocket feeds and data visualization charts for operational KPI tracking.
+            </p>
+            <div class="project-tech-list">
+              <span class="tech-chip">Python / Flask</span>
+              <span class="tech-chip">Scikit-learn</span>
+              <span class="tech-chip">Chart.js</span>
+              <span class="tech-chip">Pandas</span>
+              <span class="tech-chip">Real-Time Telemetry</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         PAGE 4: WORK EXPERIENCE & DATA OPS (Frames 151 – 195)
+         ----------------------------------------------------------------------- -->
+    <section class="story-section content-section" id="experience" data-frame-start="151" data-frame-end="195">
+      <div class="section-inner content-card-wrapper">
+        
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">Track Record</span>
+          </div>
+          <h2 class="section-title">Work Experience & Engineering Delivery</h2>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- Role 1 -->
+          <div class="glass-card exp-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Mechanical Engineer – Project & Data Operations</h3>
+                <span class="exp-company">Clear Water Ltd. (Thermal Power Plant) · Bhusawal (Mahagenco) & Talcher (NTPC)</span>
+              </div>
+              <span class="exp-date">June 2023 – March 2026</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Monitored and analyzed real-time operational data from PT Plant, ETP, and CWTP systems daily — identifying anomalies, flagging deviations, and driving corrective decisions based on telemetry patterns.</li>
+              <li>Authored structured daily and weekly KPI reports for executive stakeholders, tracking system health, dependencies, and operational efficiency trends.</li>
+              <li>Applied systematic Root Cause Analysis (RCA) methodology to diagnose system failures — directly transferable to debugging complex full-stack web architectures, APIs, and ML pipelines.</li>
+              <li>Coordinated operations across 10+ cross-functional personnel and third-party vendors across two major power plant sites.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 & 3 in Grid -->
+          <div class="exp-grid-sub">
+            <div class="glass-card exp-card sub">
+              <div class="exp-header">
+                <div>
+                  <h4 class="exp-role">Front End Web Developer Intern</h4>
+                  <span class="exp-company">The Innovative Solutions · Nashik</span>
+                </div>
+                <span class="exp-date">Oct – Nov 2022</span>
+              </div>
+              <p class="exp-summary">
+                Built and deployed the Government Garden Project website from ground up using HTML, CSS, and JavaScript. Scoped deliverables, authored clean code, and managed agile iteration cycles with stakeholders.
+              </p>
+            </div>
+
+            <div class="glass-card exp-card sub">
+              <div class="exp-header">
+                <div>
+                  <h4 class="exp-role">Transport Executive</h4>
+                  <span class="exp-company">Maniyar Trading Company · Nashik</span>
+                </div>
+                <span class="exp-date">Jan – Dec 2021</span>
+              </div>
+              <p class="exp-summary">
+                Tracked logistics metrics, vendor SLAs, and fleet dispatch data to optimize supply routing — developing early core discipline in operational data analysis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         PAGE 5: FULL STACK SKILLS MATRIX & CONTACT / HIRE (Frames 196 – 240)
+         ----------------------------------------------------------------------- -->
+    <section class="story-section content-section" id="skills" data-frame-start="196" data-frame-end="240">
+      <div class="section-inner content-card-wrapper">
+        
+        <div class="section-header">
+          <div class="kicker-badge">
+            <span class="kicker-line"></span>
+            <span class="kicker-text">Technical Capabilities & Connect</span>
+          </div>
+          <h2 class="section-title">Full Stack Developer Skills Matrix & Direct Contact</h2>
+        </div>
+
+        <div class="skills-contact-layout">
+          
+          <!-- Left: Full Stack Skills Matrix -->
+          <div class="skills-column">
+            
+            <!-- Frontend Skills -->
+            <div class="glass-card skill-category-card">
+              <h4 class="category-heading">Frontend Web Development</h4>
+              <div class="skills-chips">
+                <span class="skill-chip active">React.js</span>
+                <span class="skill-chip active">Next.js</span>
+                <span class="skill-chip active">JavaScript (ES6+)</span>
+                <span class="skill-chip">TypeScript</span>
+                <span class="skill-chip">HTML5 / Semantic Web</span>
+                <span class="skill-chip">CSS3 / SASS</span>
+                <span class="skill-chip">Tailwind CSS</span>
+                <span class="skill-chip">Responsive Web Design</span>
+                <span class="skill-chip">State Management (Redux/Zustand)</span>
+              </div>
+            </div>
+
+            <!-- Backend & APIs -->
+            <div class="glass-card skill-category-card">
+              <h4 class="category-heading">Backend, APIs & Server Architecture</h4>
+              <div class="skills-chips">
+                <span class="skill-chip active">Node.js</span>
+                <span class="skill-chip active">Express.js</span>
+                <span class="skill-chip active">Python (FastAPI / Flask)</span>
+                <span class="skill-chip">RESTful API Design</span>
+                <span class="skill-chip">GraphQL</span>
+                <span class="skill-chip">WebSockets</span>
+                <span class="skill-chip">JWT / OAuth Authentication</span>
+                <span class="skill-chip">Microservices Basics</span>
+              </div>
+            </div>
+
+            <!-- Databases & Storage -->
+            <div class="glass-card skill-category-card">
+              <h4 class="category-heading">Databases, Vector Stores & ORMs</h4>
+              <div class="skills-chips">
+                <span class="skill-chip active">PostgreSQL</span>
+                <span class="skill-chip active">MongoDB</span>
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">Redis</span>
+                <span class="skill-chip active">FAISS Vector DB</span>
+                <span class="skill-chip">Prisma / Mongoose</span>
+              </div>
+            </div>
+
+            <!-- AI & Machine Learning -->
+            <div class="glass-card skill-category-card">
+              <h4 class="category-heading">AI, GenAI & Applied ML</h4>
+              <div class="skills-chips">
+                <span class="skill-chip active">RAG Pipelines</span>
+                <span class="skill-chip active">LangChain</span>
+                <span class="skill-chip">Vector Embeddings</span>
+                <span class="skill-chip">Prompt Engineering</span>
+                <span class="skill-chip">Scikit-learn</span>
+                <span class="skill-chip">Pandas & NumPy</span>
+                <span class="skill-chip">Predictive Modeling</span>
+              </div>
+            </div>
+
+            <!-- DevOps & Tools -->
+            <div class="glass-card skill-category-card">
+              <h4 class="category-heading">DevOps, Cloud & Developer Tools</h4>
+              <div class="skills-chips">
+                <span class="skill-chip active">Git & GitHub</span>
+                <span class="skill-chip">Docker</span>
+                <span class="skill-chip">AWS (S3, EC2, SageMaker)</span>
+                <span class="skill-chip">CI/CD Automation</span>
+                <span class="skill-chip">Postman</span>
+                <span class="skill-chip">Linux / Bash</span>
+                <span class="skill-chip">VS Code</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Contact & Hire Card -->
+          <div class="contact-column" id="contact">
+            <div class="glass-card contact-card">
+              <div class="contact-avatar-badge">
+                <span class="monogram-initials">TS</span>
+              </div>
+              <h3 class="contact-heading">Ready to Engineer Scalable AI Full Stack Solutions</h3>
+              <p class="contact-sub">
+                Targeting AI Full Stack Developer roles. Ready to deliver responsive, user-friendly frontend experiences, scalable backend microservices, and modern AI/LLM integrations for your team.
+              </p>
+
+              <div class="contact-details-list">
+                <a href="mailto:tausifsayyed85@gmail.com" class="contact-item">
+                  <span class="contact-item-icon">✉</span>
+                  <div class="contact-item-text">
+                    <span class="item-label">Email</span>
+                    <span class="item-val">tausifsayyed85@gmail.com</span>
+                  </div>
+                </a>
+
+                <a href="tel:+919595689877" class="contact-item">
+                  <span class="contact-item-icon">✆</span>
+                  <div class="contact-item-text">
+                    <span class="item-label">Phone / WhatsApp</span>
+                    <span class="item-val">+91 9595689877</span>
+                  </div>
+                </a>
+
+                <div class="contact-item">
+                  <span class="contact-item-icon">📍</span>
+                  <div class="contact-item-text">
+                    <span class="item-label">Location</span>
+                    <span class="item-val">Bhusawal, Maharashtra, India (Open to 100% Remote)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Formspree Contact Form -->
+              <form
+                action="https://formspree.io/f/xyegnvoe"
+                method="POST"
+                class="contact-form"
+                id="contact-form"
+              >
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Your Name</label>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Smith" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Your Email</label>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@company.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message" class="form-label">Your Message</label>
+                  <textarea id="form-message" name="message" class="form-textarea" rows="4" placeholder="Tell me about your project, idea, or role..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width form-submit-btn" id="form-submit-btn">
+                  <span>Send Message</span>
+                  <span class="btn-circle-arrow">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M1 7H13M13 7L7.5 1.5M13 7L7.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="form-status-msg" id="form-status-msg" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Fullscreen Modal / Menu Drawer -->
+  <div class="menu-modal" id="menu-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-brand">Tausif Irfan Sayyed</span>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Menu">✕</button>
+      </div>
+      <nav class="modal-nav">
+        <a href="#home" class="modal-link active"><span>01</span> Home & Overview</a>
+        <a href="#about" class="modal-link"><span>02</span> Profile & Education</a>
+        <a href="#projects" class="modal-link"><span>03</span> Websites & Projects</a>
+        <a href="#experience" class="modal-link"><span>04</span> Work Experience</a>
+        <a href="#skills" class="modal-link"><span>05</span> Full Stack Skills</a>
+        <a href="#contact" class="modal-link"><span>06</span> Contact / Hire</a>
+      </nav>
+      <div class="modal-footer">
+        <div class="modal-col">
+          <span class="col-title">Direct Inquiries</span>
+          <a href="mailto:tausifsayyed85@gmail.com">tausifsayyed85@gmail.com</a>
+          <span class="phone-text">+91 9595689877</span>
+        </div>
+        <div class="modal-col">
+          <span class="col-title">Profiles</span>
+          <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
